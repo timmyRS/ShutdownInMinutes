@@ -13,7 +13,8 @@ public class ShutdownInMinutes extends JavaPlugin
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 		reloadConfig();
-		getServer().getScheduler().scheduleSyncDelayedTask(this, ()->{
+		getServer().getScheduler().scheduleSyncDelayedTask(this, ()->
+		{
 			for(Player p : getServer().getOnlinePlayers())
 			{
 				p.kickPlayer(getConfig().getString("disconnectMessage"));
